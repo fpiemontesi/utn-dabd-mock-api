@@ -1,0 +1,26 @@
+<h1>Listado Persona</h1>
+<button class="btn btn-primary" (click)="onNewPerson()">Nueva Persona</button>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellido</th>
+        <th scope="col">DNI</th>
+        <th scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let person of list">
+        <th scope="row">{{person.id}}</th>
+        <td>{{person.firstName}}</td>
+        <td>{{person.lastName}}</td>
+        <td>{{person.identificationNumber}}</td>
+        <td>
+          <button class="btn btn-secondary" (click)="onDelete(person.id)">
+            Borrar
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
